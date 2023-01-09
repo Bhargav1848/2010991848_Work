@@ -1,0 +1,38 @@
+Date: 14 December 2022
+
+1. Computing Paradigms==> Essential Characterstics + Service Models + Deployment Models
+2. Cloud computing is a model for enabling ubiquitous(used anywhere),convenient,on-demand network access to
+   a shared pool configurable computing resources.
+2.5 Servers+(Virutalization or ParaVirtualization) will lead to cloud computing.
+3. Private Deployment: 
+        Advantages:
+            1.Complete Control.
+            2.Move
+            3.Deploy anything
+            4.Scale It Up
+        Disadvantages:
+            1.Fully Unmanaged (Difficult To Manage)
+            2.Humar Reaource to manage
+            3.TroubleShooting
+        Capital Expenditure: Expenditure held for setup of servers.
+        Operational Expenditure:On going Expenditure.
+4. Public Deployment: Third party setup
+                      Ex: AWS,Google,Azure
+5. Hybrid Deployment: Mixture of Public and Private Deployment.
+6. Communitiy Deployment:Similar to Private one will host and rest of the communitiy can use.
+
+Date: 15 December 2022
+
+1. On Premises:
+2. Infrastructure (as service) IaaS => Full Administrative
+3. Platform (as a service) PaaS => Limited Administrative
+4. Software (as a service) SaaS  =>  Unsage and Usage related services
+
+-- Virutalization: We download one iso file which helps us install new type OS
+-- Para Virutalization: Reframe the Kernel so that it can support Virutalization.
+
+1 Virtual Machine: Its is a closely detached software device that could run its own os and application 
+as if it is running on a physical machine;
+2. Hypervisor: minimal kerlnel to run OS
+3
+4. Hosted Virutalization: A method

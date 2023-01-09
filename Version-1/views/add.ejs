@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/index.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>Add Details</h1>
+    </center>
+    <center>
+        <div>
+            <form action="/add" method="post">
+                <table cellspacing="30px">
+                    <tr>
+                        <td><label for="desc">Description:</label></td>
+                        <td>
+                            <input required autocomplete="off" id="desc" name="desc" type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="deadline">Deadline:</label></td>
+                        <td>
+                            <input required autocomplete="off" id="deadline" type="date" name="deadline" />
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" value="Add" /><br />
+            </form>
+        </div>
+    </center>
+</body>
+
+</html>

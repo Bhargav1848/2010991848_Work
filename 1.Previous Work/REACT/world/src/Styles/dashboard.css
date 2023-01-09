@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+.dashboard {
+    width: 70%;
+    margin: 80px auto;
+    font-family: 'Kanit', sans-serif;
+}
+
+.column {
+    text-align: center;
+    z-index: 1;
+    margin: 10px;
+}
+
+.column1 {
+    min-width: 10%;
+}
+
+.column2 {
+    width: 11%;
+}
+
+.column3 {
+    width: 25%;
+}
+
+.column4 {
+    width: 17%;
+}
+
+.column5 {
+    width: 20%;
+}
+
+.column6 {
+    width: 10%;
+}
+
+.list-item {
+    margin-top: 10px;
+}
+
+
+/* .column .delete-icon {
+    color: rgb(174, 14, 14);
+    font-size: xx-large;
+} */
+
+.column5 Button {
+    width: 73px !important;
+    color: rgb(13, 110, 253);
+    border-color: rgb(13, 110, 253);
+}
+
+.column .delete-icon:hover {
+    background-color: rgba(253, 89, 89, 0.9);
+}
+
+.column5 Button:hover {
+    background-color: rgb(13, 110, 253);
+    color: white;
+}
+
+.image {
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid black;
+    background-color: black;
+    width: 40px;
+    margin: auto;
+    transform: translateY(-5px);
+    height: 40px;
+}
+
+.image img {
+    transform: translateY(-10px);
+}
+
+.column>Button {
+    z-index: 200;
+    float: right;
+}
