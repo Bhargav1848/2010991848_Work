@@ -1,0 +1,128 @@
+<%- include('header.ejs') %> <%- include('navbar.ejs') %>
+<center>
+  <% var length=results.length%> <%if(length==0){%>
+  <br />
+  <br />
+  <br />
+  <center>
+    <p>
+      <b style="font-size: 60px; color: rgb(109, 109, 109)">
+        ヘ( ^o^)ノ＼(^_^ )
+      </b>
+    </p>
+  </center>
+  <center class="myfont" style="font-size: 30px">Your's Cart is Empty.</center>
+
+  <%}else{%>
+
+  <table class="table">
+    <tr class="tr">
+      <th>ID</th>
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Buying Time</th>
+      <th>Quantity Time</th>
+      <th>Total Price</th>
+      <th>Delete</th>
+    </tr>
+    <% results.forEach((result,idx)=>{ %>
+    <tr>
+      <td class="td"><%=idx+1%>.</td>
+      <td class="td">
+        <span id="pid<%=idx+1%>"> <%=result.p_id%> </span>
+      </td>
+      <td class="td"><%=result.p_name%></td>
+      <td class="td">Rs. <%=result.price%>/-</td>
+      <td class="td"><%=result.time%></td>
+      <td class="td">
+        <div>
+          <img
+            onclick="func('<%=result.quantity%>',-1,'<%=idx+1%>','<%=result.price%>')"
+            width="20px"
+            height="20px"
+            src="Icons/minus.png"
+            alt=""
+            srcset=""
+          />
+          <b>
+            <span
+              id="count<%=idx+1%>"
+              style="
+                width: 55px;
+                text-align: center;
+                display: inline-block;
+                transform: translateY(2px);
+              "
+              >1</span
+            >
+          </b>
+          <img
+            onclick="func('<%=result.quantity%>',1,'<%=idx+1%>','<%=result.price%>')"
+            width="17.5px"
+            height="17.5px"
+            src="Icons/plus.png"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </td>
+      <td class="td">
+        Rs.
+        <span id="price<%=idx+1%>"><%=result.price%> </span> /-
+      </td>
+      <!-- <td class="td">
+                <div></div>
+              </td> -->
+      <td>
+        <a href="/deletecart/<%=result.p_id%>">
+          <button>Delete</button>
+        </a>
+      </td>
+    </tr>
+    <%})%>
+  </table>
+</center>
+<br />
+<center>
+  <table>
+    <tr>
+      <td>
+        <label for="uname"><b>Address :</b></label>
+      </td>
+      <td>
+        <input
+          style="width: 230px"
+          id="address"
+          type="text"
+          placeholder="Enter Address"
+          name="address"
+          autocomplete="off"
+          required
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="psw"><b>Payment Method :</b></label>
+      </td>
+      <td>
+        <select
+          style="width: 230px"
+          id="mode"
+          name="mode"
+          id="mode"
+          style="height: 30px"
+        >
+          <option value="Pre-Paid">Pre-Paid</option>
+          <option value="Post-Paid">Post-Paid</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <br />
+
+  <button onclick="postCart(<%=length%>)">Checkout All</button>
+</center>
+<%}%> <%- include('footer.ejs') %>

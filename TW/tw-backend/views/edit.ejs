@@ -1,0 +1,35 @@
+<%- include('partials/header.ejs') %>
+
+<section id="create">
+  <div class="heading">
+    <h1>Create new blog</h1>
+  </div>
+  <div class="inside">
+    <form action="/edit" method="post">
+      <input
+        name="title"
+        value="<%=result.title%>"
+        placeholder="title"
+        type="text"
+      />
+      <textarea
+        name="description"
+        value="<%=result.body%>"
+        id=""
+        cols="100"
+        rows="10"
+      ></textarea>
+      <input
+        name="img_url"
+        value="<%=result.CreatedUser%>"
+        placeholder="img-url"
+        type="text"
+      />
+      <div class="btn-container">
+        <button class="btn">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<%- include('partials/footer.ejs') %>

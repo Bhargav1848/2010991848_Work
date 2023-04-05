@@ -1,0 +1,43 @@
+<div
+  class="navbar__div"
+  style="display: flex; height: 40px; padding: 10px 10px"
+>
+  <div class="icon" style="width: 50%">
+    <a
+      href="/"
+      style="
+        font-family: 'Pacifico', cursive !important;
+        font-size: 26px;
+        text-decoration: underline;
+      "
+      class="myfont"
+      >Sasta Amazon</a
+    >
+  </div>
+  <div class="navbar" style="display: flex; position: absolute; right: 15px">
+    <%if(!isloggedIn){%>
+
+    <button style="margin-left: 5px">
+      <a href="/login">Login</a>
+    </button>
+    <button style="margin-left: 5px">
+      <a href="/register">Register</a>
+    </button>
+    <%}else{%>
+    <span style="transform: translateX(-20px)" class="font"
+      >Welocome <%=username%></span
+    >
+    <button style="margin-left: 5px">
+      <a href="/cart">My Cart</a>
+    </button>
+    <button style="margin-left: 5px">
+      <a href="/orders">My Orders</a>
+    </button>
+    <button style="margin-left: 5px">
+      <a href="/logout">Logout</a>
+    </button>
+    <%}%>
+  </div>
+</div>
+<br />
+<br />

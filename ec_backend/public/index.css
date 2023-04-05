@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+* {
+    font-family: 'Kanit', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+}
+
+.navbar__div a {
+    text-decoration: none;
+    font-size: medium;
+    color: black;
+}
+
+.icon a {
+    font-family: 'Pacifico', cursive !important;
+}
+
+.navbar__div>* {
+    font-size: larger;
+}
+
+.alert {
+    margin: 20px auto;
+    width: 400px;
+    text-align: center;
+    font-family: 'Pacifico', cursive !important;
+    font-size: larger;
+}
+
+.myfont {
+    font-family: 'Pacifico', cursive !important;
+    font-size: 26px;
+}
+
+.font {
+    font-family: 'Pacifico', cursive !important;
+}
+
+.button {
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.table,
+.th,
+.td {
+    border: 2px solid black;
+    /* border-collapse: collapse; */
+}
+
+.table {
+    margin-top: 30px;
+    width: 75%;
+}
+
+#check:focus {
+    outline: none;
+}

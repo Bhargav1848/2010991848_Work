@@ -1,0 +1,59 @@
+</body>
+<script>
+    function func(total, vary, id, price) {
+        // console.log(10)
+        let currval = parseInt(document.getElementById("count" + id).innerHTML);
+
+        currval += vary;
+
+        if (currval <= total && currval >= 1) {
+            document.getElementById("count" + id).innerHTML = currval;
+            document.getElementById("price" + id).innerHTML = price * currval;
+        }
+
+    }
+
+    function postCart(total) {
+        const list = []
+        const address = document.getElementById("address").value;
+        const mode = document.getElementById("mode").value;
+        if (address == "" || mode == "") {
+            alert("Kindly fill the address and Mode of payment")
+        } else {
+
+            let obj = {
+                'pid': null,
+                'quantity': null,
+                'mode': mode,
+                'address': address
+            }
+
+            for (var i = 1; i <= parseInt(total); i++) {
+                obj.pid = document.getElementById("pid" + i).innerHTML;
+                obj.quantity = document.getElementById("count" + i).innerHTML;
+                list.push({...obj
+                })
+            }
+
+            fetch("/postcart", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "data": list
+                    })
+                })
+                .then(response => {
+                    // handle response
+                })
+                .catch(error => {
+                    // handle error
+                });
+        }
+        alert("Order Placed Successfully")
+        location.reload()
+    }
+</script>
+
+</html>

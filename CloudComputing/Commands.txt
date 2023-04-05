@@ -1,0 +1,17 @@
+sudo su
+yum update -y
+yum install httpd -y
+service httpd start
+checkconfig httpd on
+
+
+sudo yum install -y httpd
+sudo systemctl status
+sudo systemctl start httpd
+sudo systemctl enable httpd
+cd /var/www/
+ls
+cd html/   --> [ cgi-bin html ]
+sudo touch index.html
+sudo vim index.html
+sudo systemctl restart httpd

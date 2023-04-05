@@ -1,0 +1,41 @@
+<%- include('header.ejs')%> <%- include('navbar.ejs') %>
+<center>
+  <table class="table">
+    <tr class="tr">
+      <th>ID</th>
+      <th>Product Id</th>
+      <th>Username</th>
+      <th>Order Id</th>
+      <th>Address</th>
+      <th>Tracking</th>
+      <th>Tracking Id</th>
+      <th>Payment Mode</th>
+    </tr>
+    <% results.forEach((result,idx)=>{ %>
+    <tr class="tr">
+      <td class="td"><%=idx+1%></td>
+      <td class="td"><%=result.p_id%></td>
+      <td class="td"><%=result.usr_buy%></td>
+      <td class="td"><%=result.o_id%></td>
+      <td class="td"><%=result.addr%></td>
+      <td class="td">
+        <%if(admin==1){%>
+        <form action="/update/<%=result.id%>" method="post">
+          <input
+            id="check"
+            style="border: none"
+            type="number"
+            name="oid"
+            value="<%=result.tracking%>"
+          />
+          <input type="submit" value="Update" />
+        </form>
+        <%}else{%> <%=result.tracking%> <%}%>
+      </td>
+      <td class="td"><%=result.tracking_id%></td>
+      <td class="td"><%=result.mode%></td>
+    </tr>
+    <%})%>
+  </table>
+</center>
+<%- include('footer.ejs')%>

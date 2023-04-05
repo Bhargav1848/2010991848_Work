@@ -1,0 +1,14 @@
+<%- include('header.ejs') %>
+<!-- line area -->
+<% switch(classname){ case 'success': %>
+<div class="alert alert-success" role="alert"><%=message%></div>
+<% break; case 'warning': %>
+<div class="alert alert-warning" role="alert"><%=message%></div>
+<% break; case 'danger': %>
+<div class="alert alert-danger" role="alert"><%=message%></div>
+<% break; default: %>
+<p>Default output</p>
+<% break; } %>
+
+<!-- line area -->
+<%- include('footer.ejs') %>

@@ -1,0 +1,63 @@
+<%- include('header.ejs')%>
+<div class="container">
+  <center>
+    <h1>Aamzone Login</h1>
+  </center>
+  <form class="" action="/auth" method="post">
+    <center>
+      <table>
+        <tr>
+          <td>
+            <label for="uname"><b>Username</b></label>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Username"
+              name="uname"
+              required
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="psw"><b>Password</b></label>
+          </td>
+          <td>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="passwd"
+              required
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td rowspan="3">
+            <button type="submit">Login</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              <input type="checkbox" checked="checked" name="remember" />
+              Remember me
+            </label>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </form>
+  <br />
+
+  <center>
+    <div style="text-align: left; width: 270px">
+      <p>Don't have an account? <a href="/register">Sign up</a></p>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </center>
+</div>
+
+<%- include('footer.ejs')%>

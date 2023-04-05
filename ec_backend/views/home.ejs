@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        .box {
+            /* height: 200px;
+        width: 180px;
+        border: 4px solid black;
+        border-radius: 25px;
+        padding: 5px 10px; */
+        }
+        
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            /* gap: 3%;
+        margin: auto;
+        width: 80%; */
+        }
+        
+        .pr {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('navbar.ejs') %>
+        <div style="width: 80%; margin: auto">
+            <center>
+                <p class="myfont">Products</p>
+            </center>
+            <div class="products">
+                <% results.forEach((result,idx)=>{ %>
+                    <div class="box" style="
+            border: 2px solid black;
+            margin-left: 20px;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: rgb(238, 238, 250);
+          ">
+                        <center>
+                            <a href="details/<%=result.id%>">
+                                <h2>
+                                    <%=result.name%>
+                                </h2>
+                            </a>
+                            <%if(result.image){%>
+                                <img width="250px" height="250px" src="<%=result.image%>" alt="" />
+                                <%}else{%>
+                                    <img width="250px" height="250px" src="https://ingoodcompany.asia/images/products_attr_img/matrix/default.png" alt="" srcset="" />
+                                    <%}%>
+                                        <img src="" alt="" srcset="" />
+                                        <div>
+                                            <h4>Category:
+                                                <%=result.type%>
+                                            </h4>
+                                            <% if(result.quantity==0){%>
+                                                <b style="color: red">Out Of Stock !</b>
+                                                <%}else{%>
+                                                    <span>[Quantity: <%=result.quantity%>]</span>
+                                                    <%}%>
+                                        </div>
+                                        <span class="pr"><b>Rs. <%=result.price%>/-</b></span>
+                                        <span><b>Rs. <%=result.sale_price%>/-</b></span
+            ><br />
+            <a
+              class="button"
+              href="/addtocart/<%=result.id%>/<%=result.price%>/<%=result.name%>/<%=result.quantity%>"
+              ><button  <%=(result.quantity==0) ? "disabled" : "" %>    class="button" type="button">Add to Cart</button></a
+            >
+            <!-- <a href="/checkout/<%=result.id%>"
+              class="button"
+              ><button <%=(result.quantity==0) ? "disabled" : "" %> class="button" type="button">BuyNow</button></a
+            >  -->
+          </center>
+        </div>
+        <br />
+        <%})%>
+      </div>
+    </div>
+  </body>
+</html>
